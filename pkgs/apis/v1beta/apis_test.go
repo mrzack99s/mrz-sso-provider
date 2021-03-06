@@ -14,12 +14,8 @@ import (
 
 func TestAddUserinfo(t *testing.T) {
 
-	system.ParseSystemConfig("../../../config.yaml")
-	db := sql_db.MySQL{
-		Username: system.SystemConfigVar.MRZ_SSO.DB.SQL.UAT.Username,
-		Password: system.SystemConfigVar.MRZ_SSO.DB.SQL.UAT.Password,
-		Hostname: system.SystemConfigVar.MRZ_SSO.DB.SQL.UAT.Hostname,
-		DBName:   system.SystemConfigVar.MRZ_SSO.DB.SQL.UAT.DBName,
+	db := sql_db.SQLLite{
+		Path: "../../../test.db",
 	}
 	db.Initial()
 	tools.SQL_CleanAndMigrate()
@@ -64,12 +60,8 @@ func TestAddUserinfo(t *testing.T) {
 
 func TestAddAuthentication(t *testing.T) {
 
-	system.ParseSystemConfig("../../../config.yaml")
-	db := sql_db.MySQL{
-		Username: system.SystemConfigVar.MRZ_SSO.DB.SQL.UAT.Username,
-		Password: system.SystemConfigVar.MRZ_SSO.DB.SQL.UAT.Password,
-		Hostname: system.SystemConfigVar.MRZ_SSO.DB.SQL.UAT.Hostname,
-		DBName:   system.SystemConfigVar.MRZ_SSO.DB.SQL.UAT.DBName,
+	db := sql_db.SQLLite{
+		Path: "../../../test.db",
 	}
 	db.Initial()
 	tools.SQL_CleanAndMigrate()

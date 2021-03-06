@@ -2,20 +2,15 @@ mrz_sso:
   db:
     sql:
       production:
-        hostname: "hostname"
-        username: sso
-        password: "password"
-        db_name: "production_db"
-      uat:
-        hostname: "hostname"
-        username: sso
-        password: "password"
-        db_name: "uat_db"
+        hostname: hostname:port
+        username: username_db
+        password: password_db
+        db_name: db_name
   security:
-    salt: "character 32 digits"
+    salt: 1234567890abcdef1234567890abcdef
     http_auth_users:
-      - username: "username"
-        password: "password"
+      - username: username
+        password: passwd
     mgmt_auth_users:
-      - username: "username"
-        password: "password"
+      - username: username
+        password: passwd
