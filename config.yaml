@@ -1,0 +1,21 @@
+mrz_sso:
+  db:
+    sql:
+      production:
+        hostname: "hostname"
+        username: sso
+        password: "password"
+        db_name: "production_db"
+      uat:
+        hostname: "hostname"
+        username: sso
+        password: "password"
+        db_name: "uat_db"
+  security:
+    salt: "character 32 digits"
+    http_auth_users:
+      - username: "username"
+        password: "password"
+    mgmt_auth_users:
+      - username: "username"
+        password: "password"
